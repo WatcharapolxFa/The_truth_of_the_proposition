@@ -11,9 +11,10 @@ int main()
 	}str;
 
 	printf("InPut : ");
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		scanf_s("%s",&str.Letters[i]);
+		getch();
 		printf("%s", str.Letters[i]);
 	}
 
