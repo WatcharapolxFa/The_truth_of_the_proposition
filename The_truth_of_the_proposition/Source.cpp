@@ -5,79 +5,54 @@
 #include <string.h> 
 
 
-int main()
-{
-	struct charstr
+void inputchar(void);
+void outputchar(void);
+
+
+struct charstr
 	{
 		char Letters[4];
 		int i;
 	}str;
 
-	printf("InPut : ");
-	for (str.i = 0; str.i < 4; str.i++)
-	{
-		scanf_s("%s",&str.Letters[str.i]);
-		getchar();
-		
-	}
-printf("%s", str.Letters[0]);
-	
-	/*if (ch.Letters[0] == 54 || ch.Letters[1] == 54)
-	{
-		printf("T");
-	}*/
-	return 0;
-}
-
-/// <summary>
-/// ////////////////////
-/// </summary>
-/// <param name=""></param>
-void inputpassword(void);
-
-void outputpassword(void);
-
-struct pass
-{
-	char password[9];
-	int check;
-}gotoo;
-
-
-
 int main()
 {
-
-	inputpassword();
-	printf("Please push Enter .\n");
+	inputchar();
 	_getch();
-	outputpassword();
-
+	outputchar();
 	_getch();
+
+	
 }
 
-void inputpassword()
+void inputchar()
 {
-	printf("Enter Password: ");
-
-	for (gotoo.check = 0; gotoo.check < 8; gotoo.check++) {
-
-
-		gotoo.password[gotoo.check] = _getch();
-
-
-		printf("*");
+printf("InPut T or F : ");
+	for (str.i = 0; str.i < 3; str.i++)
+	{
+		str.Letters[str.i] = _getch();
+		printf("%c", str.Letters[str.i]);
 	}
-	gotoo.password[gotoo.check] = '\0';
+	str.Letters[str.i] = '\0';
 	printf("\n");
-}
 
-void outputpassword()
+}
+void outputchar()
 {
-	printf("Show password: ");
-	if (gotoo.password[gotoo.check] != '\0' || gotoo.password[gotoo.check] != 'x') {
-		for (gotoo.check = 0; gotoo.password[gotoo.check] != '\0'; gotoo.check++)
-			printf("%c", gotoo.password[gotoo.check]);
+	
+	printf("Output T or F : ");
+	if (str.Letters[1] == '^')
+	{
+		if (str.Letters[0] == 'T' && str.Letters[2] == 'T')
+		{
+			printf("T");
+		}
+		else 
+		{
+			printf("F");
+		}
 	}
 
 }
+
+	
